@@ -10,15 +10,30 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+        <nav class="navbar navbar-dark bg-dark justify-content-center">
+                <h1 class="navbar-text">Are You A Psychic?</h1>
+        </nav>
     <!-- create html content of page to display results -->
-    <div class="jubotron">
-        
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3><span class="badge badge-primary" id="display-text">Press any key to play</span></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                        <p class="badge badge-success">Wins: <span id="wins"></span></p>
+                </div>
+            </div>
+
+                <p class="badge badge-danger">Losses: <span id="losses"></span></p>
+                <p class="badge badge-warning">Guesses Left: <span id="guess-left"></span></p>
+                <p class="badge badge-secondary">Guesses so far: <span id="guess-so-far"></span></p>
+        </div>
+
     </div>
-    <h3><span class="badge badge-primary" id="display-text">Press any key to play</span></h3>
-    <p class="badge badge-success">Wins: <span id="wins"></span></p>
-    <p class="badge badge-danger">Losses: <span id="losses"></span></p>
-    <p class="badge badge-warning">Guesses Left: <span id="guess-left"></span></p>
-    <p class="badge badge-secondary">Guesses so far: <span id="guess-so-far"></span></p>
+
 
 
 
