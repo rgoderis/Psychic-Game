@@ -5,7 +5,7 @@ var guessLeft = 9;
 var guessSoFar = [];
 var userGuess;
 var computerGuess;
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v"]
+var computerChoices = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var displayText = "This is a test";
 
 
@@ -19,8 +19,6 @@ var displayText = "This is a test";
         document.querySelector("#guess-so-far").innerHTML = guessSoFar;
     };
 
-    updateDisplay();
-
     // create function to generate a random letter for computerGuess
     function computerRandomLetter(){
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -29,24 +27,50 @@ var displayText = "This is a test";
 
     // create function to reset scores
     function resetScores(){
-        var guessLeft = 9;
-        var guessSoFar = [];
+        guessLeft = 9;
+        guessSoFar = [];
     }
+
     computerRandomLetter()
+    
     // create a onkeyup envent function to grab userGuess
     document.onkeyup = function(event){
         userGuess = event.key
-        console.log(userGuess);
-        console.log(computerGuess)
+        // variables for is user wins
         if(userGuess === computerGuess){
+            // win score goes up
             wins++;
+            // guess left and guess so far reset
             resetScores();
+            // h3 displays victory text
+            displayText = "You Won"
+            // updates new results to the DOM
+            updateDisplay();
+            // computer guesses new letter
+            computerRandomLetter();
+        }
+        else{
+            // pushes user guess to the guess so far array
+            guessSoFar.push(userGuess);
+            // subtracts from guesses left
+            guessLeft--;
+            // h3 displays try again
+            displayText = "Try Again"
+            // updates new results to DOM
             updateDisplay();
         }
-        else if()
-        {
-            losses++
-
+        // fires if there are no guesses left
+        if(guessLeft === 0){
+            // loss score goes up
+            losses++;
+            // guess left and guess so far reset
+            resetScores();
+            // displays victory text for computer
+            displayText = "Computer Won"
+            // updates new results to DOM
+            updateDisplay();
+            // computer guesses new letter
+            computerRandomLetter();
         }
     }
     
