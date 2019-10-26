@@ -1,5 +1,6 @@
-# Psychic-Game
-Psychic Game
-This game pulls from an array of every letter in the alphabet and has the user guess a letter.
-The computer compares the user guess to the computer guess.  If they are the same the user score goes up and the game resets,
-if they are different then the guess left counter goes down, if it reaches 0 then the computer score goes up and the game resets.
+# Psychic Game
+Psychic Game is a letter guessing game built with vanilla JavaScript.  The computer guesses a random letter by pulling from an array of letters and the user has 9 opportunities to guess the correct letter.  If the user guesses correctly the score counter increases and the game resets.  If the user runs out of guesses the loss counter increases and the game resets.  
+
+![psychic game](./assets/images/game.png)
+
+[psychic game](https://rgoderis.github.io/Psychic-Game/)
